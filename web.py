@@ -17,8 +17,9 @@ def home():
     if request.method == 'POST':
         if 'file' in request.files:
             data = request.files['file']
+            print(data)
             if data and allowed_file(data.filename):
-                neuro_result = neuro.neuro(neuro)
+                neuro_result = neuro.neuro(data)
             else:
                 neuro_result = 'File is not allowed or no selected file'
 
