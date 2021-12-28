@@ -1,3 +1,5 @@
+from tensorflow.keras.models import model_from_json
+
 def neuro(arg):
     
     with open('model.json', 'r') as f:
