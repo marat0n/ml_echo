@@ -1,0 +1,1 @@
+This folder (uploaded_files) need for save uploaded audio-files.
