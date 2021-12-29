@@ -33,4 +33,4 @@ def home():
     return render_template('home.html', neuro_result=neuro_result)
 
 
-app.run(debug=True, host='185.221.153.51', port=5000)
+# app.run(debug=True, host='localhost', port=5000)
