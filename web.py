@@ -23,14 +23,11 @@ def home():
             data = request.files['file']
 
             if data and allowed_file(data.filename):
-<<<<<<< HEAD
-                neuro_result = neuro.neuro(data.filename)
-=======
                 filename = secure_filename(data.filename)
                 data.save(os.path.join(UPLOAD_FOLDER, filename))
                 pathToFile = f'{UPLOAD_FOLDER}\\{filename}'
                 neuro_result = neuro.neuro(pathToFile)
->>>>>>> 63d1608acbfe90d89591b1e3e428431edba9612b
+                print(neuro_result)
             else:
                 neuro_result = 'File is not allowed or no selected file'
 

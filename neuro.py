@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 import tensorflow
 import librosa
 import librosa.display
 import numpy as np
 
-=======
->>>>>>> 63d1608acbfe90d89591b1e3e428431edba9612b
 from tensorflow.keras.models import model_from_json
 
 def neuro(arg):
@@ -19,9 +16,7 @@ def neuro(arg):
 
     mfcc = []
 
-    x, sr = librosa.load(arg)
-
-    print(x)
+    x, sr = librosa.load(arg, duration=10)
 
     x = librosa.feature.mfcc(x, sr=sr)
     
@@ -30,7 +25,7 @@ def neuro(arg):
 
     data.append(np.array(mfcc))
     
-    np.array(data)
+    data = np.array(data)
 
     prediction_file = model.predict(data)
 
