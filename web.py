@@ -19,7 +19,7 @@ def home():
             data = request.files['file']
             print(data)
             if data and allowed_file(data.filename):
-                neuro_result = neuro.neuro(data)
+                neuro_result = neuro.neuro(data.filename)
             else:
                 neuro_result = 'File is not allowed or no selected file'
 

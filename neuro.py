@@ -1,3 +1,10 @@
+import tensorflow
+import librosa
+import librosa.display
+import numpy as np
+
+from tensorflow.keras.models import model_from_json
+
 def neuro(arg):
     
     with open('model.json', 'r') as f:
@@ -26,4 +33,4 @@ def neuro(arg):
 
     labels = ['eng', 'rus']
 
-    return labels[np.argmax(prediction[0])]
+    return labels[np.argmax(prediction_file[0])]
