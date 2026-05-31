@@ -2,11 +2,9 @@ import tensorflow
 import librosa
 import librosa.display
 import numpy as np
-# Hello Peaceful World!
 from tensorflow.keras.models import model_from_json
 
 def neuro(arg):
-    
     with open('model.json', 'r') as f:
         model = model_from_json(f.read())
    
@@ -18,7 +16,7 @@ def neuro(arg):
 
     x, sr = librosa.load(arg, duration=10)
 
-    x = librosa.feature.mfcc(x, sr=sr)
+    x = librosa.feature.mfcc(y=x, sr=sr)
     
     for val in x:
         mfcc.append(np.mean(val))
@@ -32,3 +30,4 @@ def neuro(arg):
     labels = ['eng', 'rus']
 
     return labels[np.argmax(prediction_file[0])]
+    # return f"{prediction_file[0]}" # DEBUG
