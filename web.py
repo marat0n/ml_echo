@@ -25,7 +25,7 @@ def home():
             if data and allowed_file(data.filename):
                 filename = secure_filename(data.filename)
                 data.save(os.path.join(UPLOAD_FOLDER, filename))
-                pathToFile = f'{UPLOAD_FOLDER}\\{filename}'
+                pathToFile = f'{UPLOAD_FOLDER}/{filename}' # WARN: for Windows use \\ instead of /
                 neuro_result = neuro.neuro(pathToFile)
                 print(neuro_result)
             else:
