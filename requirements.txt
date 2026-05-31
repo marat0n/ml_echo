@@ -1,0 +1,7 @@
+flask
+werkzeug
+tensorflow==2.7.0
+librosa
+numpy<2
+matplotlib
+protobuf<3.20
