@@ -34,4 +34,13 @@ def home():
     return render_template('home.html', neuro_result=neuro_result)
 
 
+# Для отладки
 # app.run(debug=True, host='localhost', port=5000)
+
+# Для запуска веб-сервиса из окружения запустить команду:
+# flask --app web.py run
+
+# Для теста используются файлы:
+# russian_about_Finland.mp3 -- определяется как Английский (ошибочно)
+# Russian_Povar.wav -- определяется как Английский (ошибочно)
+# russian_G.wav -- верно определяется как Русский!
